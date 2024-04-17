@@ -17,7 +17,7 @@ const Dashboard = () => {
   return (
     <div className={styles.outer}>
       {isRepoDetail ? (
-        <RepoDetail />
+        <RepoDetail data={repoDetail[0]} />
       ) : (
         <>
           <User />
