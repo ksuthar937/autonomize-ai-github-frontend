@@ -1,0 +1,31 @@
+.outer {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 120px;
+  border-radius: 3rem;
+}
+
+.name {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.verified {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.topics {
+  background-color: wheat;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}

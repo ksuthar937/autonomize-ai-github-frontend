@@ -1,23 +1,14 @@
 import "./App.css";
-import Logo from "../src/assets/github.svg";
-import { useState } from "react";
+
+import SearchBox from "./components/SearchBox";
+import Dashboard from "./components/Dashboard";
+
+import { useSelector } from "react-redux";
 
 function App() {
-  const [username, setUsername] = useState("");
+  const isUser = useSelector((state) => state.user.isUser);
 
-  console.log(username);
-
-  return (
-    <div className="outer-section">
-      <img src={Logo} alt="logo" width={40} />
-      <input
-        type="text"
-        placeholder="Enter github username"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <button>Search</button>
-    </div>
-  );
+  return <>{isUser ? <Dashboard /> : <SearchBox />}</>;
 }
 
 export default App;
