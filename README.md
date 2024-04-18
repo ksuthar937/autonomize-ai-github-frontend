@@ -1,8 +1,11 @@
-# React + Vite
+# GitHub User Repository Viewer (Fronend) using React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Enter a GitHub username below and click "Search" to explore their repositories and followers.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+####Instructions:
+-Input the GitHub username.
+-Click "Search" to view repositories.
+-Click on any repository to see its description.
+-Find followers by clicking the designated button.
+-Explore repositories of followers by clicking on their usernames.
+-Easily navigate back to the repository list page with the input box.
