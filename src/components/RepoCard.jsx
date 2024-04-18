@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import styles from "./RepoCard.module.css";
-import { getRepo } from "../redux/reposSlice";
+import { getRepo } from "../redux/userSlice";
 
-const RepoCard = ({ avatar, name, desc, data, id }) => {
+const RepoCard = ({ avatar, name, desc, id }) => {
   const dispatch = useDispatch();
 
   return (

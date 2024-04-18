@@ -4,21 +4,18 @@ import RepoCard from "./RepoCard";
 import styles from "./Dashboard.module.css";
 import { useSelector } from "react-redux";
 import RepoDetail from "./RepoDetail";
+import UserCard from "./UserCard";
 
 const Dashboard = () => {
-  const { repos, isRepoDetail, repoDetailId } = useSelector(
-    (state) => state.repos
+  const { repos, repoDetailId, status, followers } = useSelector(
+    (state) => state.user
   );
 
   const repoDetail = repos.filter((repo) => repo.id === repoDetailId);
 
-  console.log(repoDetail);
-
   return (
     <div className={styles.outer}>
-      {isRepoDetail ? (
-        <RepoDetail data={repoDetail[0]} />
-      ) : (
+      {status === "repoList" ? (
         <>
           <User />
           <div className={styles.repos}>
@@ -29,6 +26,21 @@ const Dashboard = () => {
                 name={repo.name}
                 desc={repo.description}
                 id={repo.id}
+              />
+            ))}
+          </div>
+        </>
+      ) : status === "repoDetail" ? (
+        <RepoDetail data={repoDetail[0]} />
+      ) : (
+        <>
+          <User />
+          <div className={styles.repos}>
+            {followers.map((follower) => (
+              <UserCard
+                key={follower.id}
+                avatar={follower.avatar_url}
+                login={follower.login}
               />
             ))}
           </div>

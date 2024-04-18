@@ -1,5 +1,4 @@
 import Github from "../assets/githubName.svg";
-
 import Verified from "../assets/verified.svg";
 import { formatDate } from "../utils/helper";
 

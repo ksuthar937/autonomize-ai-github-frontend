@@ -1,0 +1,21 @@
+.outer {
+  width: 28rem;
+  height: 6rem;
+  padding: 1rem;
+  box-shadow: 0.3em 0.3em 2em rgba(110, 105, 105, 0.4);
+  border-radius: 1rem;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 60px;
+  border-radius: 3rem;
+}
+
+.desc > h3 {
+  text-transform: capitalize;
+}

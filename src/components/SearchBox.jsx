@@ -2,10 +2,8 @@ import { useState } from "react";
 import Logo from "../assets/github.svg";
 
 import styles from "./SearchBox.module.css";
-import axios from "axios";
 import { useDispatch } from "react-redux";
-import { getUser } from "../redux/userSlice";
-import { getAllRepos } from "../redux/reposSlice";
+import { fetchUser } from "../redux/userSlice";
 
 const SearchBox = () => {
   const dispatch = useDispatch();
@@ -15,18 +13,12 @@ const SearchBox = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const user = await axios.get(`https://api.github.com/users/${username}`);
-      dispatch(getUser(user.data));
-      if (user) {
-        const repos = await axios.get(
-          `https://api.github.com/users/${username}/repos`
-        );
-        dispatch(getAllRepos(repos.data));
-      }
+      dispatch(fetchUser(username));
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
     <div className={styles.outer}>
       <img src={Logo} alt="logo" width={40} />
