@@ -11,7 +11,7 @@ Enter a GitHub username and click "Search" to explore their repositories and fol
 
 ##### Seach Input & Button
 
-![alt text](./Seach.PNG)
+![alt text](./Search.PNG)
 
 ##### Repos List 
 
