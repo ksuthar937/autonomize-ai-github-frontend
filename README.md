@@ -1,6 +1,6 @@
-# GitHub User Repository Viewer (Fronend) using React + Vite
+# GitHub User Repository Viewer (Frontend) React + Vite
 
-Enter a GitHub username below and click "Search" to explore their repositories and followers.
+Enter a GitHub username and click "Search" to explore their repositories and followers.
 
 #### Instructions:
 - Input the GitHub username.
@@ -8,4 +8,3 @@ Enter a GitHub username below and click "Search" to explore their repositories a
 - Click on any repository to see its description.
 - Find followers by clicking the designated button.
 - Explore repositories of followers by clicking on their usernames.
-- Easily navigate back to the repository list page with the input box.
