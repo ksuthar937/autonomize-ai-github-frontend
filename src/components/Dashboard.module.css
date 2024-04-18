@@ -14,3 +14,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.manualSearch {
+  background-color: inherit;
+  color: black;
+  border-radius: 0;
+  border: 1px solid black;
+  margin-bottom: 0;
+}

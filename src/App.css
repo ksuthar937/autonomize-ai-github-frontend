@@ -1,1 +1,9 @@
+.container {
+  margin-top: 3rem;
+}
 
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}

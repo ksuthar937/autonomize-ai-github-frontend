@@ -3,7 +3,7 @@ import Logo from "../assets/github.svg";
 
 import styles from "./SearchBox.module.css";
 import { useDispatch } from "react-redux";
-import { fetchUser } from "../redux/userSlice";
+import { fetchUser, setLoader } from "../redux/userSlice";
 
 const SearchBox = () => {
   const dispatch = useDispatch();
@@ -13,6 +13,7 @@ const SearchBox = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
+      dispatch(setLoader());
       dispatch(fetchUser(username));
     } catch (error) {
       console.log(error);
@@ -22,14 +23,15 @@ const SearchBox = () => {
   return (
     <div className={styles.outer}>
       <img src={Logo} alt="logo" width={40} />
-      <input
-        type="text"
-        placeholder="Enter github username"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <button type="submit" onClick={(e) => handleSearch(e)}>
-        Search
-      </button>
+      <form onSubmit={(e) => handleSearch(e)}>
+        <input
+          type="text"
+          placeholder="Enter github username"
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
 };

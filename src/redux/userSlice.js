@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 export const fetchUser = createAsyncThunk(
   "user/fetchUser",
@@ -22,8 +23,7 @@ const initialState = {
   repoDetailId: "",
   status: "repoList",
   followers: [],
-  selectedFollower: "",
-  followers_repos: [],
+  isLoading: false,
 };
 
 const userSlice = createSlice({
@@ -40,21 +40,32 @@ const userSlice = createSlice({
     showFollower(state) {
       state.status = "followers";
     },
+    setLoader(state) {
+      state.isLoading = true;
+    },
+    showSeach(state) {
+      state.isUser = false;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchUser.fulfilled, (state, action) => {
+        toast.success("Successfully fetched");
         state.user = action.payload.user;
         state.repos = action.payload.repos;
         state.followers = action.payload.followers;
         state.isUser = true;
+        state.status = "repoList";
+        state.isLoading = false;
       })
-      .addCase(fetchUser.rejected, (state, action) => {
-        // handle error state if needed
+      .addCase(fetchUser.rejected, (state) => {
+        state.isLoading = false;
+        toast.error("Oops Something wrong! Try again");
       });
   },
 });
 
-export const { getRepo, showFollower, showrRpos } = userSlice.actions;
+export const { getRepo, showFollower, showrRpos, setLoader, showSeach } =
+  userSlice.actions;
 
 export default userSlice.reducer;

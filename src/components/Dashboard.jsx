@@ -2,9 +2,10 @@ import User from "./User";
 import RepoCard from "./RepoCard";
 
 import styles from "./Dashboard.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import RepoDetail from "./RepoDetail";
 import UserCard from "./UserCard";
+import { showSeach } from "../redux/userSlice";
 
 const Dashboard = () => {
   const { repos, repoDetailId, status, followers } = useSelector(
@@ -12,6 +13,8 @@ const Dashboard = () => {
   );
 
   const repoDetail = repos.filter((repo) => repo.id === repoDetailId);
+
+  const dispatch = useDispatch();
 
   return (
     <div className={styles.outer}>
@@ -34,6 +37,12 @@ const Dashboard = () => {
         <RepoDetail data={repoDetail[0]} />
       ) : (
         <>
+          <button
+            className={styles.manualSearch}
+            onClick={() => dispatch(showSeach())}
+          >
+            Manual Search
+          </button>
           <User />
           <div className={styles.repos}>
             {followers.map((follower) => (

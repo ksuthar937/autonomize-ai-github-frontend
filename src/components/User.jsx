@@ -28,7 +28,7 @@ const User = () => {
         </button>
       ) : (
         <button className={styles.btn} onClick={() => dispatch(showrRpos())}>
-          Repository
+          Repositories
         </button>
       )}
     </div>
