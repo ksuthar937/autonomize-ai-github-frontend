@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
+import { fetchUser, setLoader } from "../redux/userSlice";
+
 import styles from "./UserCard.module.css";
-import { fetchUser, setLoader, showrRpos } from "../redux/userSlice";
 
 const UserCard = ({ avatar, login }) => {
   const dispatch = useDispatch();

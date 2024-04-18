@@ -1,9 +1,10 @@
-import { useState } from "react";
 import Logo from "../assets/github.svg";
 
-import styles from "./SearchBox.module.css";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 import { fetchUser, setLoader } from "../redux/userSlice";
+
+import styles from "./SearchBox.module.css";
 
 const SearchBox = () => {
   const dispatch = useDispatch();

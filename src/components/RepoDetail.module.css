@@ -65,3 +65,11 @@
   width: 100%;
   border-top: 1px solid black;
 }
+
+.language {
+  background-color: cornflowerblue;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}

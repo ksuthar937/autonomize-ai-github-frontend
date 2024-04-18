@@ -1,11 +1,13 @@
 import Github from "../assets/githubName.svg";
 import Verified from "../assets/verified.svg";
+
 import { formatDate } from "../utils/helper";
 
 import styles from "./RepoDetail.module.css";
 
 const RepoDetail = ({ data }) => {
-  const { name, description, owner, created_at, updated_at, topics } = data;
+  const { name, description, owner, created_at, updated_at, topics, language } =
+    data;
 
   return (
     <div className={styles.outer}>
@@ -32,6 +34,11 @@ const RepoDetail = ({ data }) => {
           </div>
         </>
       ) : null}
+
+      <p>
+        <strong>Language</strong> :{" "}
+        <span className={styles.language}>{language}</span>
+      </p>
 
       <p className={styles.border}></p>
 

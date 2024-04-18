@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./User.module.css";
 import { showFollower, showrRpos } from "../redux/userSlice";
+
+import styles from "./User.module.css";
 
 const User = () => {
   const {

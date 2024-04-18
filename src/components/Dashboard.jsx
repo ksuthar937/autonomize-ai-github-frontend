@@ -1,11 +1,12 @@
 import User from "./User";
 import RepoCard from "./RepoCard";
-
-import styles from "./Dashboard.module.css";
-import { useDispatch, useSelector } from "react-redux";
 import RepoDetail from "./RepoDetail";
 import UserCard from "./UserCard";
+
+import { useDispatch, useSelector } from "react-redux";
 import { showSeach } from "../redux/userSlice";
+
+import styles from "./Dashboard.module.css";
 
 const Dashboard = () => {
   const { repos, repoDetailId, status, followers } = useSelector(
